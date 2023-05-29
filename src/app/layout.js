@@ -1,11 +1,8 @@
 import { Providers } from "@/store/provider";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Carrito from "./carrito/Carrito";
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+
 const poppins = Poppins({
   weight: ["400", "600"],
   subsets: ["latin"],

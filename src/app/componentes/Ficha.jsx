@@ -11,7 +11,7 @@ const Ficha = ({ valor }) => {
           <Imagen valor={valor} />
         </div>
         <div>
-          <Link href={`/productos/${valor.id}`}>
+          <Link href={`/productos/${valor.id}`} as={estilos}>
             <button>Ver</button>
           </Link>
         </div>

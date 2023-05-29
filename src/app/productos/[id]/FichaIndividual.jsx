@@ -2,6 +2,7 @@
 import { useDispatch } from "react-redux";
 import { comprar } from "@/store/miSlice";
 import Imagen from "@/app/componentes/Imagen";
+import Link from "next/link";
 
 const FichaIndividual = ({ datos }) => {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ const FichaIndividual = ({ datos }) => {
       </div>
       <div>
         <button onClick={() => adquirir(datos)}>Comprar</button>
+        <Link href="/productos">
+          <button>Volver</button>
+        </Link>
       </div>
     </>
   );

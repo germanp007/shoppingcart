@@ -1,0 +1,8 @@
+.carrito {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  min-height: 100px;
+}
