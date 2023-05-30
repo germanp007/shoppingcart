@@ -1,21 +1,42 @@
-const getCategory = () => {
-  return fetch(`https://fakestoreapi.com/products/categories/`, {
-    cache: "no-store",
-  }).then((response) => response.json());
-};
+"use client";
+import { useEffect, useState } from "react";
+import Ficha from "../componentes/Ficha";
+import estilos from "./categories.module.css";
+import Link from "next/link";
+const page = () => {
+  //const [info, setInfo] = useState("");
+  const [datos, setDatos] = useState([]);
 
-const page = async () => {
-  const datos = await getCategory();
+  const getCategory = async (info) => {
+    const response = await fetch(
+      `https://fakestoreapi.com/products/category/${info}`
+    );
+    const data = await response.json();
+    setDatos(data);
+  };
+
+  useEffect(() => {
+    getCategory();
+  }, []);
 
   return (
     <>
-      <select>
-        <option value="">Selecciona una Categoria</option>
-        <option value="">Electronica</option>
-        <option value="">Joyeria</option>
-        <option value="">Ropa para caballeros</option>
-        <option value="">Ropa para damas</option>
+      <select onChange={(e) => getCategory(e.target.value)}>
+        <option>Selecciona una Categoria</option>
+        <option value="electronics">Electronica</option>
+        <option value="jewelery">Joyeria</option>
+        <option value="men's clothing">Ropa para caballeros</option>
+        <option value="women's clothing">Ropa para damas</option>
       </select>
+      <Link href="/">
+        {" "}
+        <button>Volver</button>{" "}
+      </Link>
+      <div className={estilos.categories}>
+        {datos.map((e, i) => {
+          return <Ficha valor={e} key={i} />;
+        })}
+      </div>
     </>
   );
 };

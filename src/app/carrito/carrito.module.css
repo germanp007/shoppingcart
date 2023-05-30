@@ -5,4 +5,20 @@
   border: 1px solid black;
   border-radius: 5px;
   min-height: 100px;
+  min-width: 100vw;
+  margin-right: 5px;
+  transition: 0.5s;
+}
+.carritoescondido {
+  display: none;
+  transition: 0.5s;
+}
+
+.invertido {
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
+.normal {
+  transition: 0.5s;
 }
