@@ -23,7 +23,7 @@ const page = () => {
   const handleEvent = () => {
     setArrow(!arrow);
   };
-  console.log(arrow);
+
   return (
     <>
       <div>
@@ -62,7 +62,7 @@ const page = () => {
             );
           })
         ) : (
-          <h6>Shopping cart is empty</h6>
+          <h6 className={estilos.title}>Shopping cart is empty</h6>
         )}
       </div>
       <div>
