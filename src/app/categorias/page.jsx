@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCategory } from "@/store/miSlice";
 import Ficha from "../componentes/Ficha";
 import estilos from "./categories.module.css";
 import Link from "next/link";
 const page = () => {
-  //const [info, setInfo] = useState("");
   const [datos, setDatos] = useState([]);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state.misCategorias.category);
 
   const getCategory = async (info) => {
     const response = await fetch(
@@ -16,12 +19,14 @@ const page = () => {
   };
 
   useEffect(() => {
-    getCategory();
-  }, []);
+    if (selector) {
+      getCategory(selector);
+    }
+  }, [selector]);
 
   return (
     <>
-      <select onChange={(e) => getCategory(e.target.value)}>
+      <select onChange={(e) => dispatch(setCategory(e.target.value))}>
         <option>Selecciona una Categoria</option>
         <option value="electronics">Electronica</option>
         <option value="jewelery">Joyeria</option>

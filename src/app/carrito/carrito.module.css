@@ -6,8 +6,8 @@
 
   border-radius: 5px;
   min-height: 100px;
-  min-width: 100vw;
   transition: 0.5s;
+  flex-wrap: wrap;
 }
 .carritoescondido {
   display: none;

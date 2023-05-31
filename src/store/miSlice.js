@@ -7,7 +7,9 @@ export const origenSlice = createSlice({
     miCarrito: [],
   },
   reducers: {
-    setCategory: (state, action) => {},
+    setCategory: (state, action) => {
+      state.category = action.payload;
+    },
     comprar: (state, action) => {
       state.miCarrito = [...state.miCarrito, action.payload];
     },
