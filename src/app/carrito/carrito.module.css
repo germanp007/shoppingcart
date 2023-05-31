@@ -3,15 +3,12 @@
   gap: 2rem;
   align-items: center;
   border: 1px solid black;
-
   border-radius: 5px;
   min-height: 100px;
-  transition: 0.5s;
   flex-wrap: wrap;
 }
 .carritoescondido {
   display: none;
-  transition: 0.5s;
 }
 .title {
   text-align: center;
